@@ -1,0 +1,76 @@
+<svg viewBox="0 0 900 525" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="kbarrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+  </defs>
+  <rect width="900" height="525" fill="#f8f9fc"/>
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Amazon Bedrock Knowledge Base: RAG Flow</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">Ingestion runs ahead of time (sync); retrieval and generation run for every question</text>
+
+  <!-- Lane 1: ingestion -->
+  <rect x="20" y="80" width="860" height="150" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="40" y="104" font-size="13.5" font-weight="700" fill="#20222b">1. Ingestion (StartIngestionJob / Sync)</text>
+
+  <rect x="40" y="125" width="170" height="70" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.3"/>
+  <text x="125" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Documents in S3</text>
+  <text x="125" y="175" text-anchor="middle" font-size="11" fill="#6b7086">PDF, HTML, DOCX, TXT</text>
+
+  <rect x="255" y="125" width="170" height="70" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.3"/>
+  <text x="340" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Parse + chunk</text>
+  <text x="340" y="175" text-anchor="middle" font-size="11" fill="#6b7086">fixed or semantic</text>
+
+  <rect x="470" y="125" width="170" height="70" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.3"/>
+  <text x="555" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Embed chunks</text>
+  <text x="555" y="175" text-anchor="middle" font-size="11" fill="#6b7086">Titan Text Embed V2</text>
+
+  <rect x="685" y="125" width="175" height="70" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.3"/>
+  <text x="772" y="155" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Vector store</text>
+  <text x="772" y="175" text-anchor="middle" font-size="11" fill="#6b7086">S3 Vectors, OpenSearch</text>
+
+  <line x1="212" y1="160" x2="251" y2="160" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+  <line x1="427" y1="160" x2="466" y2="160" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+  <line x1="642" y1="160" x2="681" y2="160" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+
+  <!-- Lane 2: query -->
+  <rect x="20" y="255" width="860" height="215" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="40" y="279" font-size="13.5" font-weight="700" fill="#20222b">2. Query (Retrieve / RetrieveAndGenerate)</text>
+
+  <rect x="40" y="295" width="170" height="60" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.3"/>
+  <text x="125" y="320" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">User question</text>
+  <text x="125" y="339" text-anchor="middle" font-size="11" fill="#6b7086">"refund window?"</text>
+
+  <rect x="255" y="295" width="170" height="60" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.3"/>
+  <text x="340" y="320" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Embed question</text>
+  <text x="340" y="339" text-anchor="middle" font-size="11" fill="#6b7086">same embeddings model</text>
+
+  <rect x="470" y="295" width="170" height="60" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.3"/>
+  <text x="555" y="320" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Similarity search</text>
+  <text x="555" y="339" text-anchor="middle" font-size="11" fill="#6b7086">top-k + metadata filter</text>
+
+  <line x1="212" y1="325" x2="251" y2="325" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+  <line x1="427" y1="325" x2="466" y2="325" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+
+  <!-- vector store to search -->
+  <path d="M772,197 L772,325 L644,325" fill="none" stroke="#d97a34" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#kbarrow)"/>
+  <text x="782" y="300" font-size="11" fill="#6b7086">reads index</text>
+
+  <!-- Row B (right to left) -->
+  <rect x="470" y="390" width="170" height="60" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.3"/>
+  <text x="555" y="415" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Augmented prompt</text>
+  <text x="555" y="434" text-anchor="middle" font-size="11" fill="#6b7086">question + chunks</text>
+
+  <rect x="255" y="390" width="170" height="60" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.3"/>
+  <text x="340" y="415" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Foundation model</text>
+  <text x="340" y="434" text-anchor="middle" font-size="11" fill="#6b7086">e.g. Claude Haiku 4.5</text>
+
+  <rect x="40" y="390" width="170" height="60" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.3"/>
+  <text x="125" y="415" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Answer + citations</text>
+  <text x="125" y="434" text-anchor="middle" font-size="11" fill="#6b7086">links to S3 sources</text>
+
+  <line x1="555" y1="357" x2="555" y2="386" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+  <line x1="468" y1="420" x2="429" y2="420" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+  <line x1="253" y1="420" x2="214" y2="420" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#kbarrow)"/>
+
+  <text x="450" y="500" text-anchor="middle" font-size="12" fill="#6b7086">Retrieve stops after the search and returns chunks; RetrieveAndGenerate also calls the model and returns citations.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="aws-stack-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+  </defs>
+  <rect width="860" height="470" fill="#f8f9fc"/>
+  <text x="430" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">The AWS AI/ML Stack</text>
+  <text x="430" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">Higher layers: less ML work, less control. Lower layers: more control, more work.</text>
+
+  <!-- Layer 1: AI services -->
+  <rect x="20" y="80" width="760" height="70" rx="10" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+  <text x="36" y="110" font-size="14" font-weight="700" fill="#20222b">AI services</text>
+  <text x="36" y="130" font-size="11.5" fill="#6b7086">pre-trained APIs, no ML skills needed</text>
+  <rect x="316" y="90" width="450" height="50" rx="7" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.2"/>
+  <text x="541" y="111" text-anchor="middle" font-size="12.5" fill="#20222b">Rekognition · Textract · Comprehend</text>
+  <text x="541" y="129" text-anchor="middle" font-size="12.5" fill="#20222b">Transcribe · Translate · Polly</text>
+
+  <!-- Layer 2: Bedrock -->
+  <rect x="20" y="166" width="760" height="70" rx="10" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+  <text x="36" y="196" font-size="14" font-weight="700" fill="#20222b">Amazon Bedrock</text>
+  <text x="36" y="216" font-size="11.5" fill="#6b7086">foundation models as a managed API</text>
+  <rect x="316" y="176" width="450" height="50" rx="7" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.2"/>
+  <text x="541" y="197" text-anchor="middle" font-size="12.5" fill="#20222b">Converse API · Knowledge Bases · Guardrails</text>
+  <text x="541" y="215" text-anchor="middle" font-size="12.5" fill="#20222b">Agents and AgentCore · Customization · Evaluation</text>
+
+  <!-- Layer 3: SageMaker AI -->
+  <rect x="20" y="252" width="760" height="70" rx="10" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+  <text x="36" y="282" font-size="14" font-weight="700" fill="#20222b">Amazon SageMaker AI</text>
+  <text x="36" y="302" font-size="11.5" fill="#6b7086">build, train and deploy your own models</text>
+  <rect x="316" y="262" width="450" height="50" rx="7" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.2"/>
+  <text x="541" y="283" text-anchor="middle" font-size="12.5" fill="#20222b">Studio · Training and processing jobs · Endpoints</text>
+  <text x="541" y="301" text-anchor="middle" font-size="12.5" fill="#20222b">Pipelines · Model Registry · JumpStart</text>
+
+  <!-- Layer 4: Infrastructure -->
+  <rect x="20" y="338" width="760" height="70" rx="10" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="36" y="368" font-size="14" font-weight="700" fill="#20222b">Infrastructure</text>
+  <text x="36" y="388" font-size="11.5" fill="#6b7086">compute, accelerators, storage you run</text>
+  <rect x="316" y="348" width="450" height="50" rx="7" fill="#f8f9fc" stroke="#c7cbe0" stroke-width="1.2"/>
+  <text x="541" y="369" text-anchor="middle" font-size="12.5" fill="#20222b">EC2 GPU instances · Trainium · Inferentia · S3</text>
+  <text x="541" y="387" text-anchor="middle" font-size="12.5" fill="#20222b">Lambda · ECS and EKS · Deep Learning Containers</text>
+
+  <!-- Managed vs control axis -->
+  <line x1="806" y1="88" x2="806" y2="400" stroke="#4f5ecb" stroke-width="2" marker-start="url(#aws-stack-arrow)" marker-end="url(#aws-stack-arrow)"/>
+  <text x="836" y="244" text-anchor="middle" font-size="12" fill="#6b7086" transform="rotate(-90 836 244)">more control   ·   more managed</text>
+
+  <text x="430" y="446" text-anchor="middle" font-size="12" fill="#6b7086">Pick the highest layer that solves the problem; drop down only when you need more control.</text>
+</svg>

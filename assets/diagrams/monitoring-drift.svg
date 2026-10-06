@@ -1,0 +1,58 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+    <marker id="a4r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d97a34"/>
+    </marker>
+  </defs>
+  <rect width="820" height="320" fill="#f8f9fc"/>
+  <text x="410" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Monitoring, Drift Detection &amp; Continual Learning</text>
+  <text x="410" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">DMLS Ch. 8–9</text>
+
+  <g font-size="12.5" fill="#20222b">
+    <rect x="30" y="120" width="140" height="64" rx="10" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="100" y="146" text-anchor="middle" font-weight="700">Production</text>
+    <text x="100" y="164" text-anchor="middle">Traffic</text>
+
+    <rect x="220" y="120" width="140" height="64" rx="10" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="290" y="146" text-anchor="middle" font-weight="700">Model Serving</text>
+    <text x="290" y="164" text-anchor="middle" font-size="11">predictions + logs</text>
+
+    <rect x="410" y="120" width="150" height="64" rx="10" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="485" y="146" text-anchor="middle" font-weight="700">Monitoring</text>
+    <text x="485" y="164" text-anchor="middle" font-size="11">ops + ML metrics</text>
+
+    <!-- diamond decision -->
+    <polygon points="650,110 760,152 650,194 540,152" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="650" y="148" text-anchor="middle" font-size="11.5" font-weight="700">Drift</text>
+    <text x="650" y="163" text-anchor="middle" font-size="11.5" font-weight="700">detected?</text>
+
+    <rect x="610" y="240" width="160" height="56" rx="10" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+    <text x="690" y="263" text-anchor="middle" font-weight="700">Retrain /</text>
+    <text x="690" y="280" text-anchor="middle">Redeploy</text>
+
+    <rect x="330" y="240" width="160" height="56" rx="10" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="410" y="263" text-anchor="middle" font-weight="700">Keep Serving</text>
+    <text x="410" y="280" text-anchor="middle" font-size="11">(no action needed)</text>
+  </g>
+
+  <g fill="none" stroke="#4f5ecb" stroke-width="2" marker-end="url(#a4)">
+    <path d="M170,152 L218,152"/>
+    <path d="M360,152 L408,152"/>
+    <path d="M560,152 L538,152"/>
+  </g>
+  <g fill="none" stroke="#d97a34" stroke-width="2" marker-end="url(#a4r)">
+    <path d="M680,185 C685,205 688,220 688,238"/>
+    <text x="705" y="215" font-size="11" fill="#d97a34">yes</text>
+  </g>
+  <g fill="none" stroke="#2f9e63" stroke-width="2" marker-end="url(#a4r)" style="stroke:#6b7086">
+    <path d="M580,170 C500,205 460,220 420,238" stroke="#6b7086" marker-end="url(#a4)"/>
+    <text x="500" y="215" font-size="11" fill="#6b7086">no</text>
+  </g>
+  <g fill="none" stroke="#2f9e63" stroke-width="2" marker-end="url(#a4)">
+    <path d="M690,240 C690,100 500,70 300,100 C220,118 180,118 102,118" />
+  </g>
+  <text x="410" y="312" text-anchor="middle" font-size="11.5" fill="#6b7086">Retraining feeds a new model back into serving — monitoring never truly stops.</text>
+</svg>

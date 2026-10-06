@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/></marker><marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97a34"/></marker></defs>
+  <rect width="800" height="380" fill="#f8f9fc"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">An Artificial Neuron</text>
+  <text x="400" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">Weighted sum of inputs plus a bias, passed through a non-linear activation</text>
+  <text x="110" y="92" text-anchor="middle" font-size="12" fill="#6b7086">inputs</text>
+  <g fill="none" stroke="#4f5ecb" stroke-width="2" marker-end="url(#ah)">
+    <path d="M134,134 L362,192"/>
+    <path d="M134,200 L358,200"/>
+    <path d="M134,266 L362,208"/>
+    <path d="M400,122 L400,156"/>
+    <path d="M440,200 L516,200"/>
+    <path d="M660,200 L718,200"/>
+  </g>
+  <g font-size="14" fill="#20222b" text-anchor="middle">
+    <circle cx="110" cy="130" r="24" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/><text x="110" y="135">x1</text>
+    <circle cx="110" cy="200" r="24" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/><text x="110" y="205">x2</text>
+    <circle cx="110" cy="270" r="24" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/><text x="110" y="275">x3</text>
+  </g>
+  <g font-size="12.5" fill="#4f5ecb" font-weight="700" text-anchor="middle">
+    <text x="240" y="146">w1</text>
+    <text x="240" y="190">w2</text>
+    <text x="240" y="263">w3</text>
+  </g>
+  <rect x="350" y="92" width="100" height="30" rx="6" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+  <text x="400" y="112" text-anchor="middle" font-size="12.5" fill="#20222b">bias b</text>
+  <circle cx="400" cy="200" r="40" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.8"/>
+  <text x="400" y="206" text-anchor="middle" font-size="16" fill="#20222b">&#931; + b</text>
+  <text x="400" y="292" text-anchor="middle" font-size="12" fill="#6b7086">z = w1x1 + w2x2 + w3x3 + b</text>
+  <rect x="520" y="170" width="140" height="60" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.8"/>
+  <text x="590" y="196" text-anchor="middle" font-size="15" fill="#20222b">a = f(z)</text>
+  <text x="590" y="216" text-anchor="middle" font-size="11.5" fill="#6b7086">ReLU / sigmoid / tanh</text>
+  <text x="745" y="166" text-anchor="middle" font-size="12" fill="#6b7086">output</text>
+  <circle cx="745" cy="200" r="22" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="745" y="205" text-anchor="middle" font-size="14" fill="#20222b">a</text>
+  <text x="400" y="350" text-anchor="middle" font-size="12" fill="#6b7086">Example: x = [1, 7, 3], w = [0.5, 0.4, -0.8], b = -1 gives z = -0.1 and sigmoid(z) = 0.475</text>
+</svg>

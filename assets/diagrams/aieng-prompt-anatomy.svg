@@ -1,0 +1,30 @@
+<svg viewBox="0 0 800 490" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<defs><marker id="ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/></marker></defs>
+<rect width="800" height="490" fill="#f8f9fc"/>
+<text x="400" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Anatomy of a Production Prompt</text>
+<text x="400" y="52" text-anchor="middle" font-size="12" fill="#6b7086">AIE Ch. 5 · GAIA Ch. 2</text>
+<rect x="40" y="80" width="460" height="50" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+<text x="60" y="101" font-size="14" font-weight="700" fill="#20222b">System instructions</text>
+<text x="60" y="119" font-size="12" fill="#6b7086">role, task, rules, fallback when unsure</text>
+<text x="520" y="110" font-size="12" fill="#6b7086">static: same every request (cacheable)</text>
+<rect x="40" y="140" width="460" height="50" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+<text x="60" y="161" font-size="14" font-weight="700" fill="#20222b">Few-shot examples</text>
+<text x="60" y="179" font-size="12" fill="#6b7086">input → output pairs that show what good looks like</text>
+<text x="520" y="170" font-size="12" fill="#6b7086">static, or retrieved by similarity</text>
+<rect x="40" y="200" width="460" height="50" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+<text x="60" y="221" font-size="14" font-weight="700" fill="#20222b">Context</text>
+<text x="60" y="239" font-size="12" fill="#6b7086">retrieved documents, user record, today's date</text>
+<text x="520" y="230" font-size="12" fill="#6b7086">changes per request</text>
+<rect x="40" y="260" width="460" height="50" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+<text x="60" y="281" font-size="14" font-weight="700" fill="#20222b">User input</text>
+<text x="60" y="299" font-size="12" fill="#6b7086">the question or document to process</text>
+<text x="520" y="290" font-size="12" fill="#6b7086">changes per request (untrusted!)</text>
+<rect x="40" y="320" width="460" height="50" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+<text x="60" y="341" font-size="14" font-weight="700" fill="#20222b">Output format</text>
+<text x="60" y="359" font-size="12" fill="#6b7086">JSON schema, label list, length limit</text>
+<text x="520" y="350" font-size="12" fill="#6b7086">static</text>
+<line x1="270" y1="372" x2="270" y2="396" stroke="#4f5ecb" stroke-width="1.5" marker-end="url(#ap)"/>
+<rect x="40" y="400" width="460" height="40" rx="8" fill="#ffffff" stroke="#4f5ecb" stroke-width="1.5"/>
+<text x="270" y="425" text-anchor="middle" font-size="13" font-weight="700" fill="#20222b">Chat template → one token sequence → model</text>
+<text x="400" y="472" text-anchor="middle" font-size="12" fill="#6b7086">Put instructions first and the question last; keep static parts at the start so prompt caching can reuse them.</text>
+</svg>

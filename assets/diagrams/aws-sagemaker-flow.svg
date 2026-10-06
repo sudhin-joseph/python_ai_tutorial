@@ -1,0 +1,56 @@
+<svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="smarrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+  </defs>
+  <rect width="900" height="440" fill="#f8f9fc"/>
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">SageMaker AI: Train → Deploy → Invoke</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">What ModelTrainer and ModelBuilder create for you behind the scenes</text>
+
+  <text x="40" y="84" font-size="12.5" font-weight="700" fill="#4f5ecb">1 · Train</text>
+  <rect x="40" y="95" width="220" height="56" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="150" y="119" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Training data in S3</text>
+  <text x="150" y="138" text-anchor="middle" font-size="11.5" fill="#6b7086">s3://bucket/iris/train/</text>
+
+  <rect x="340" y="95" width="220" height="56" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+  <text x="450" y="119" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Training job container</text>
+  <text x="450" y="138" text-anchor="middle" font-size="11.5" fill="#6b7086">runs train.py on ml.m5.large</text>
+
+  <rect x="640" y="95" width="220" height="56" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="750" y="119" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">model.tar.gz in S3</text>
+  <text x="750" y="138" text-anchor="middle" font-size="11.5" fill="#6b7086">tar of /opt/ml/model</text>
+
+  <line x1="262" y1="123" x2="336" y2="123" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#smarrow)"/>
+  <line x1="562" y1="123" x2="636" y2="123" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#smarrow)"/>
+
+  <polyline points="750,153 750,205 205,205 205,246" fill="none" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#smarrow)"/>
+  <text x="440" y="197" text-anchor="middle" font-size="11.5" fill="#6b7086">create_model: artifact + serving image + inference.py + role</text>
+
+  <text x="30" y="240" font-size="12.5" font-weight="700" fill="#2f9e63">2 · Deploy and serve</text>
+  <rect x="30" y="250" width="190" height="56" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+  <text x="125" y="274" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Model</text>
+  <text x="125" y="293" text-anchor="middle" font-size="11.5" fill="#6b7086">image + artifact + role</text>
+
+  <rect x="250" y="250" width="190" height="56" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+  <text x="345" y="274" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Endpoint config</text>
+  <text x="345" y="293" text-anchor="middle" font-size="11.5" fill="#6b7086">instances or serverless</text>
+
+  <rect x="470" y="250" width="190" height="56" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+  <text x="565" y="274" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Endpoint</text>
+  <text x="565" y="293" text-anchor="middle" font-size="11.5" fill="#6b7086">HTTPS, autoscaling</text>
+
+  <rect x="700" y="250" width="170" height="56" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+  <text x="785" y="274" text-anchor="middle" font-size="13" font-weight="600" fill="#20222b">Client app</text>
+  <text x="785" y="293" text-anchor="middle" font-size="11.5" fill="#6b7086">invoke_endpoint</text>
+
+  <line x1="222" y1="278" x2="246" y2="278" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#smarrow)"/>
+  <line x1="442" y1="278" x2="466" y2="278" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#smarrow)"/>
+  <line x1="698" y1="278" x2="664" y2="278" stroke="#4f5ecb" stroke-width="1.8" marker-end="url(#smarrow)"/>
+
+  <rect x="30" y="330" width="840" height="56" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="450" y="353" text-anchor="middle" font-size="12" fill="#20222b">Billing: training jobs bill per second while running; a real-time endpoint bills per instance-hour until deleted;</text>
+  <text x="450" y="372" text-anchor="middle" font-size="12" fill="#20222b">serverless bills per GB-second of compute used. Delete the endpoint, then its config and model, when done.</text>
+
+  <text x="450" y="416" text-anchor="middle" font-size="11.5" fill="#6b7086">Artifacts and data stay in your S3 bucket; containers come from ECR (AWS-managed or your own).</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="mtpa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+  </defs>
+  <rect width="900" height="450" fill="#f8f9fc"/>
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Four Ways to Test a Model in Production</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">DMLS Ch. 9: Model A = current model, Model B = candidate</text>
+
+  <g font-size="12" fill="#20222b">
+    <!-- panel 1: shadow -->
+    <rect x="30" y="80" width="410" height="150" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="45" y="104" font-size="14" font-weight="700">1. Shadow deployment: no user risk</text>
+    <rect x="45" y="140" width="80" height="44" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="85" y="166" text-anchor="middle">Requests</text>
+    <rect x="170" y="120" width="255" height="36" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+    <text x="297" y="143" text-anchor="middle">Model A: serves 100% of users</text>
+    <rect x="170" y="176" width="255" height="36" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="297" y="199" text-anchor="middle">B (shadow): logged, never shown</text>
+
+    <!-- panel 2: A/B -->
+    <rect x="460" y="80" width="410" height="150" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="475" y="104" font-size="14" font-weight="700">2. A/B test: random split, compare metric</text>
+    <rect x="475" y="140" width="80" height="44" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="515" y="166" text-anchor="middle">Requests</text>
+    <rect x="600" y="120" width="255" height="36" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+    <text x="727" y="143" text-anchor="middle">Model A: 50% of users (random)</text>
+    <rect x="600" y="176" width="255" height="36" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="727" y="199" text-anchor="middle">Model B: 50% of users (random)</text>
+
+    <!-- panel 3: canary -->
+    <rect x="30" y="250" width="410" height="150" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="45" y="274" font-size="14" font-weight="700">3. Canary release: small slice first</text>
+    <rect x="45" y="310" width="80" height="44" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="85" y="336" text-anchor="middle">Requests</text>
+    <rect x="170" y="290" width="255" height="36" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+    <text x="297" y="313" text-anchor="middle">Model A (current): 95% of traffic</text>
+    <rect x="170" y="346" width="255" height="36" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="297" y="369" text-anchor="middle">B (canary): 5%, then ramp up</text>
+
+    <!-- panel 4: bandit -->
+    <rect x="460" y="250" width="410" height="150" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="475" y="274" font-size="14" font-weight="700">4. Bandit: adapts the split as it learns</text>
+    <rect x="475" y="310" width="80" height="44" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="515" y="336" text-anchor="middle">Requests</text>
+    <rect x="600" y="290" width="255" height="36" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+    <text x="727" y="313" text-anchor="middle">Model A: traffic shrinks if worse</text>
+    <rect x="600" y="346" width="255" height="36" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="727" y="369" text-anchor="middle">Model B: traffic grows if better</text>
+  </g>
+
+  <g stroke="#4f5ecb" stroke-width="1.6" fill="none" marker-end="url(#mtpa)">
+    <line x1="125" y1="156" x2="166" y2="140"/>
+    <line x1="125" y1="168" x2="166" y2="192" stroke-dasharray="5 4"/>
+    <line x1="555" y1="156" x2="596" y2="140"/>
+    <line x1="555" y1="168" x2="596" y2="192"/>
+    <line x1="125" y1="326" x2="166" y2="310"/>
+    <line x1="125" y1="338" x2="166" y2="362"/>
+    <line x1="555" y1="326" x2="596" y2="310"/>
+    <line x1="555" y1="338" x2="596" y2="362"/>
+  </g>
+
+  <text x="450" y="430" text-anchor="middle" font-size="12" fill="#6b7086">All four use live traffic but differ in user risk, speed and rigor. Dashed arrow = copy of the request.</text>
+</svg>

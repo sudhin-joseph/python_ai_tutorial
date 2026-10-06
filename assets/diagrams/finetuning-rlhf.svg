@@ -1,0 +1,67 @@
+<svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="a9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+  </defs>
+  <rect width="860" height="480" fill="#f8f9fc"/>
+  <text x="430" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Full Fine-Tuning vs. LoRA, and the RLHF Pipeline</text>
+  <text x="430" y="48" text-anchor="middle" font-size="12.5" fill="#6b7086">AIE Ch. 7 · GAIA Ch. 5–7</text>
+
+  <!-- Full FT vs LoRA -->
+  <g>
+    <rect x="20" y="70" width="230" height="190" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="135" y="94" text-anchor="middle" font-size="13" font-weight="700">Full Fine-Tuning</text>
+    <rect x="50" y="110" width="170" height="90" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="135" y="140" text-anchor="middle" font-size="11.5">All weights (W)</text>
+    <text x="135" y="158" text-anchor="middle" font-size="11.5">updated</text>
+    <text x="135" y="176" text-anchor="middle" font-size="10.5">— billions of params</text>
+    <text x="135" y="225" text-anchor="middle" font-size="11" fill="#6b7086">High cost · max quality</text>
+    <text x="135" y="242" text-anchor="middle" font-size="11" fill="#6b7086">ceiling</text>
+
+    <rect x="280" y="70" width="260" height="190" rx="12" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="410" y="94" text-anchor="middle" font-size="13" font-weight="700">LoRA (PEFT)</text>
+    <rect x="300" y="110" width="220" height="50" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.3" stroke-dasharray="4,3"/>
+    <text x="410" y="133" text-anchor="middle" font-size="11">Base weights (W)</text>
+    <text x="410" y="150" text-anchor="middle" font-size="10.5">frozen</text>
+    <rect x="300" y="175" width="100" height="36" rx="7" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="350" y="197" text-anchor="middle" font-size="11">Matrix A (r)</text>
+    <rect x="420" y="175" width="100" height="36" rx="7" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="470" y="197" text-anchor="middle" font-size="11">Matrix B (r)</text>
+    <text x="410" y="230" text-anchor="middle" font-size="11" fill="#6b7086">ΔW = B·A, rank r ≪ d</text>
+    <text x="410" y="246" text-anchor="middle" font-size="11" fill="#6b7086">1–5% of params trained</text>
+  </g>
+
+  <!-- RLHF pipeline -->
+  <g font-size="11.5" fill="#20222b">
+    <text x="430" y="300" text-anchor="middle" font-size="13" font-weight="700">RLHF Pipeline</text>
+
+    <rect x="30" y="330" width="140" height="50" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="100" y="350" text-anchor="middle">Pretrained</text>
+    <text x="100" y="366" text-anchor="middle">Base Model</text>
+
+    <rect x="200" y="330" width="140" height="50" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+    <text x="270" y="350" text-anchor="middle">Supervised</text>
+    <text x="270" y="366" text-anchor="middle">Fine-Tuning (SFT)</text>
+
+    <rect x="370" y="330" width="150" height="50" rx="8" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+    <text x="445" y="350" text-anchor="middle">Human Preference</text>
+    <text x="445" y="366" text-anchor="middle">Data (A vs B)</text>
+
+    <rect x="550" y="330" width="140" height="50" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+    <text x="620" y="350" text-anchor="middle">Reward Model</text>
+    <text x="620" y="366" text-anchor="middle" font-size="10.5">predicts preference</text>
+
+    <rect x="720" y="330" width="120" height="50" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+    <text x="780" y="350" text-anchor="middle">PPO: Align</text>
+    <text x="780" y="366" text-anchor="middle">Policy</text>
+  </g>
+  <g fill="none" stroke="#4f5ecb" stroke-width="2" marker-end="url(#a9)">
+    <path d="M170,355 L198,355"/>
+    <path d="M340,355 L368,355"/>
+    <path d="M520,355 L548,355"/>
+    <path d="M690,355 L718,355"/>
+  </g>
+  <text x="430" y="420" text-anchor="middle" font-size="11.5" fill="#6b7086">SFT teaches the model to follow instructions; RLHF teaches it which of several</text>
+  <text x="430" y="438" text-anchor="middle" font-size="11.5" fill="#6b7086">correct-looking answers humans actually prefer.</text>
+</svg>

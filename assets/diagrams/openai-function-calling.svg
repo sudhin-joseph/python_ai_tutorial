@@ -1,0 +1,61 @@
+<svg viewBox="0 0 860 530" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="fcA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/>
+    </marker>
+  </defs>
+  <rect width="860" height="530" fill="#f8f9fc"/>
+  <text x="430" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Function Calling: One Full Round Trip</text>
+  <text x="430" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">The model only asks for a call; your code runs the function and sends the result back</text>
+
+  <!-- lifeline headers -->
+  <rect x="45" y="78" width="170" height="44" rx="8" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.4"/>
+  <text x="130" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#20222b">Your function</text>
+  <text x="130" y="114" text-anchor="middle" font-size="11" fill="#6b7086">get_weather(city)</text>
+
+  <rect x="345" y="78" width="170" height="44" rx="8" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.4"/>
+  <text x="430" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#20222b">Your app</text>
+  <text x="430" y="114" text-anchor="middle" font-size="11" fill="#6b7086">Python + OpenAI SDK</text>
+
+  <rect x="645" y="78" width="170" height="44" rx="8" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.4"/>
+  <text x="730" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#20222b">OpenAI API</text>
+  <text x="730" y="114" text-anchor="middle" font-size="11" fill="#6b7086">responses.create</text>
+
+  <!-- lifelines -->
+  <g stroke="#c7cbe0" stroke-width="1.5" stroke-dasharray="5,5">
+    <line x1="130" y1="122" x2="130" y2="478"/>
+    <line x1="430" y1="122" x2="430" y2="478"/>
+    <line x1="730" y1="122" x2="730" y2="478"/>
+  </g>
+
+  <g stroke="#4f5ecb" stroke-width="1.6" fill="none">
+    <line x1="432" y1="165" x2="726" y2="165" marker-end="url(#fcA)"/>
+    <line x1="728" y1="223" x2="434" y2="223" marker-end="url(#fcA)"/>
+    <line x1="428" y1="281" x2="134" y2="281" marker-end="url(#fcA)"/>
+    <line x1="132" y1="339" x2="426" y2="339" marker-end="url(#fcA)"/>
+    <line x1="432" y1="397" x2="726" y2="397" marker-end="url(#fcA)"/>
+    <line x1="728" y1="455" x2="434" y2="455" marker-end="url(#fcA)"/>
+  </g>
+
+  <g font-size="12" fill="#20222b" text-anchor="middle">
+    <text x="580" y="157" font-weight="700">1. input + tools=[get_weather]</text>
+    <text x="580" y="181" font-size="11" fill="#6b7086">JSON Schema describes the arguments</text>
+
+    <text x="580" y="215" font-weight="700">2. output item: function_call</text>
+    <text x="580" y="239" font-size="11" fill="#6b7086">name, arguments (JSON string), call_id</text>
+
+    <text x="280" y="273" font-weight="700">3. validate args, then run it</text>
+    <text x="280" y="297" font-size="11" fill="#6b7086">json.loads(arguments)</text>
+
+    <text x="280" y="331" font-weight="700">4. result</text>
+    <text x="280" y="355" font-size="11" fill="#6b7086">{"temp_c": 18, "sky": "cloudy"}</text>
+
+    <text x="580" y="389" font-weight="700">5. function_call_output (same call_id)</text>
+    <text x="580" y="413" font-size="11" fill="#6b7086">plus the earlier items in the input list</text>
+
+    <text x="580" y="447" font-weight="700">6. final message: output_text</text>
+    <text x="580" y="471" font-size="11" fill="#6b7086">"It is 18 °C and cloudy in Paris."</text>
+  </g>
+
+  <text x="430" y="510" text-anchor="middle" font-size="11.5" fill="#6b7086">Steps 2 to 5 can repeat several times before the final answer: that repetition is the agent loop.</text>
+</svg>

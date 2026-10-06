@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI/ML Academy</title>
+<meta name="description" content="A standalone beginner-to-advanced AI/ML course: Python, math, machine learning, deep learning, MLOps, AI engineering, and building and deploying apps with OpenAI and AWS.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <aside class="sidebar" id="sidebar" aria-label="Course navigation">
+    <a class="brand" href="#/home"><span class="dot" aria-hidden="true"></span> AI/ML Academy</a>
+    <div class="progress-box">
+      <div class="title">Course progress</div>
+      <div class="progress-track"><div class="progress-fill" id="sidebarProgressFill"></div></div>
+      <div class="label" id="sidebarProgressLabel"></div>
+    </div>
+    <form class="search-box" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Search lessons…" aria-label="Search lessons">
+    </form>
+    <nav id="navList"></nav>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <main class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:.6rem;min-width:0;">
+        <button class="btn menu-toggle" id="menuToggle" type="button" aria-label="Open course navigation">☰</button>
+        <span class="crumbs" id="crumbs"></span>
+      </div>
+      <button class="btn" id="themeToggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </div>
+    <div class="content" id="content" tabindex="-1"></div>
+    <footer class="site-footer">Built from <em>Designing Machine Learning Systems</em>, <em>AI Engineering</em> and
+      <em>Generative AI on AWS</em>, plus the official OpenAI and AWS documentation. Progress is saved in this browser.</footer>
+  </main>
+
+  <script src="js/content/01-python.js"></script>
+  <script src="js/content/02-python-ai.js"></script>
+  <script src="js/content/03-ml-fundamentals.js"></script>
+  <script src="js/content/04-deep-learning.js"></script>
+  <script src="js/content/05-ml-systems.js"></script>
+  <script src="js/content/06-ai-engineering.js"></script>
+  <script src="js/content/07-openai.js"></script>
+  <script src="js/content/08-aws.js"></script>
+  <script src="js/content/09-capstones.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

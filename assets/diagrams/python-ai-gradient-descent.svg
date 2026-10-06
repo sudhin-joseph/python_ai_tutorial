@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 370" width="760" height="370" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<rect x="0" y="0" width="760" height="370" fill="#f8f9fc"/>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/></marker></defs>
+<text x="380.0" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Gradient descent on a loss curve</text>
+<text x="380.0" y="52" text-anchor="middle" font-size="13" fill="#6b7086">each step moves against the slope: w ← w − η × slope</text>
+<line x1="80" y1="290" x2="565" y2="290" stroke="#6b7086" stroke-width="1.5"/>
+<line x1="80" y1="290" x2="80" y2="80" stroke="#6b7086" stroke-width="1.5"/>
+<polyline points="95.0,88.0 98.8,93.9 102.5,99.8 106.2,105.5 110.0,111.2 113.8,116.8 117.5,122.2 121.2,127.6 125.0,132.8 128.8,138.0 132.5,143.0 136.2,147.9 140.0,152.8 143.8,157.5 147.5,162.2 151.2,166.8 155.0,171.2 158.8,175.6 162.5,179.8 166.2,183.9 170.0,188.0 173.8,191.9 177.5,195.8 181.2,199.6 185.0,203.2 188.8,206.8 192.5,210.2 196.2,213.6 200.0,216.8 203.8,219.9 207.5,223.0 211.2,225.9 215.0,228.8 218.8,231.6 222.5,234.2 226.2,236.8 230.0,239.2 233.8,241.6 237.5,243.8 241.2,245.9 245.0,248.0 248.8,249.9 252.5,251.8 256.2,253.6 260.0,255.2 263.8,256.8 267.5,258.2 271.2,259.6 275.0,260.8 278.8,261.9 282.5,263.0 286.2,263.9 290.0,264.8 293.8,265.6 297.5,266.2 301.2,266.8 305.0,267.2 308.8,267.6 312.5,267.8 316.2,267.9 320.0,268.0 323.8,267.9 327.5,267.8 331.2,267.6 335.0,267.2 338.8,266.8 342.5,266.2 346.2,265.6 350.0,264.8 353.8,263.9 357.5,263.0 361.2,261.9 365.0,260.8 368.8,259.6 372.5,258.2 376.2,256.8 380.0,255.2 383.8,253.6 387.5,251.8 391.2,249.9 395.0,248.0 398.8,245.9 402.5,243.8 406.2,241.6 410.0,239.2 413.8,236.8 417.5,234.2 421.2,231.6 425.0,228.8 428.8,225.9 432.5,223.0 436.2,219.9 440.0,216.8 443.8,213.6 447.5,210.2 451.2,206.8 455.0,203.2 458.8,199.6 462.5,195.8 466.2,191.9 470.0,188.0 473.8,183.9 477.5,179.8 481.2,175.6 485.0,171.2 488.8,166.8 492.5,162.2 496.2,157.5 500.0,152.8 503.8,147.9 507.5,143.0 511.2,138.0 515.0,132.8 518.8,127.6 522.5,122.2 526.2,116.8 530.0,111.2 533.8,105.5 537.5,99.8 541.2,93.9 545.0,88.0" fill="none" stroke="#4f5ecb" stroke-width="2.5"/>
+<line x1="110.0" y1="111.2" x2="194.0" y2="211.6" stroke="#d97a34" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="194.0" y1="211.6" x2="244.4" y2="247.7" stroke="#d97a34" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="244.4" y1="247.7" x2="274.6" y2="260.7" stroke="#d97a34" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="274.6" y1="260.7" x2="292.8" y2="265.4" stroke="#d97a34" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="292.8" y1="265.4" x2="303.7" y2="267.1" stroke="#d97a34" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<circle cx="110.0" cy="111.2" r="6" fill="#fff4ea" stroke="#d97a34" stroke-width="2"/>
+<circle cx="194.0" cy="211.6" r="6" fill="#fff4ea" stroke="#d97a34" stroke-width="2"/>
+<circle cx="244.4" cy="247.7" r="6" fill="#fff4ea" stroke="#d97a34" stroke-width="2"/>
+<circle cx="274.6" cy="260.7" r="6" fill="#fff4ea" stroke="#d97a34" stroke-width="2"/>
+<circle cx="292.8" cy="265.4" r="6" fill="#fff4ea" stroke="#d97a34" stroke-width="2"/>
+<circle cx="303.7" cy="267.1" r="6" fill="#fff4ea" stroke="#d97a34" stroke-width="2"/>
+<text x="122.0" y="99.20000000000002" text-anchor="start" font-size="12" fill="#20222b" font-weight="400">start: high loss, steep slope</text>
+<text x="320" y="305" text-anchor="middle" font-size="12" fill="#2f9e63" font-weight="700">minimum: slope = 0</text>
+<text x="322" y="328" text-anchor="middle" font-size="13" fill="#6b7086" font-weight="400">parameter w</text>
+<text x="58" y="185" text-anchor="middle" font-size="13" fill="#6b7086" transform="rotate(-90 58 185)">loss</text>
+<rect x="590" y="100" width="155" height="130" rx="6" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+<text x="667" y="124" text-anchor="middle" font-size="12" fill="#20222b" font-weight="700">How it behaves</text>
+<text x="667" y="143" text-anchor="middle" font-size="11" fill="#20222b" font-weight="400">big slope: big step</text>
+<text x="667" y="162" text-anchor="middle" font-size="11" fill="#20222b" font-weight="400">small slope: small step</text>
+<text x="667" y="181" text-anchor="middle" font-size="11" fill="#20222b" font-weight="400">steps shrink near</text>
+<text x="667" y="200" text-anchor="middle" font-size="11" fill="#20222b" font-weight="400">the bottom</text>
+<text x="667" y="219" text-anchor="middle" font-size="11" fill="#20222b" font-weight="400">η = learning rate</text>
+<text x="380" y="356" text-anchor="middle" font-size="12" fill="#6b7086" font-weight="400">Too large a learning rate overshoots the valley; too small takes many tiny steps.</text>
+</svg>

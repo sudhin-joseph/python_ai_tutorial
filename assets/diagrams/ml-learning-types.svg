@@ -1,0 +1,30 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4f5ecb"/></marker></defs>
+  <rect x="0" y="0" width="800" height="450" fill="#f8f9fc"/>
+  <text x="400.0" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#20222b">Four Families of Machine Learning</text>
+  <text x="400.0" y="52" text-anchor="middle" font-size="12.5" fill="#6b7086">Defined by the feedback the learner receives</text>
+  <rect x="20" y="80" width="370" height="165" rx="10" fill="#eef0fd" stroke="#4f5ecb" stroke-width="1.5"/>
+  <text x="40" y="112" font-size="16" text-anchor="start" font-weight="700" fill="#4f5ecb">Supervised learning</text>
+  <text x="40" y="144" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Data: inputs X + human labels y</text>
+  <text x="40" y="170" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Learns: a mapping from X to y</text>
+  <text x="40" y="196" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Tasks: regression (numbers), classification</text>
+  <text x="40" y="222" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Examples: spam filter, house prices</text>
+  <rect x="410" y="80" width="370" height="165" rx="10" fill="#eef7f0" stroke="#2f9e63" stroke-width="1.5"/>
+  <text x="430" y="112" font-size="16" text-anchor="start" font-weight="700" fill="#2f9e63">Unsupervised learning</text>
+  <text x="430" y="144" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Data: inputs X only, no labels</text>
+  <text x="430" y="170" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Learns: structure (groups, directions)</text>
+  <text x="430" y="196" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Tasks: clustering, PCA, anomaly detection</text>
+  <text x="430" y="222" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Examples: customer segments, outliers</text>
+  <rect x="20" y="265" width="370" height="165" rx="10" fill="#fff4ea" stroke="#d97a34" stroke-width="1.5"/>
+  <text x="40" y="297" font-size="16" text-anchor="start" font-weight="700" fill="#d97a34">Self-supervised learning</text>
+  <text x="40" y="329" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Data: raw data; labels made from the data</text>
+  <text x="40" y="355" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Learns: e.g. predict the hidden next word</text>
+  <text x="40" y="381" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Tasks: pre-training on text and images</text>
+  <text x="40" y="407" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Example: LLM pre-training</text>
+  <rect x="410" y="265" width="370" height="165" rx="10" fill="#ffffff" stroke="#c7cbe0" stroke-width="1.5"/>
+  <text x="430" y="297" font-size="16" text-anchor="start" font-weight="700" fill="#20222b">Reinforcement learning</text>
+  <text x="430" y="329" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Data: rewards for the agent's own actions</text>
+  <text x="430" y="355" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Learns: a policy (which action to take)</text>
+  <text x="430" y="381" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Loop: action, environment, reward, repeat</text>
+  <text x="430" y="407" font-size="13" text-anchor="start" font-weight="400" fill="#20222b">Examples: game agents, robotics, RLHF</text>
+</svg>
